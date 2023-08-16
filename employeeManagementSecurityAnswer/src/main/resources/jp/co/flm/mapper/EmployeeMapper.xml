@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- All Rights Reserved, Copyright(c) Fujitsu Learning Media Limited -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.flm.mapper.EmployeeMapper">
+
+	<!-- 一件検索 -->
+	<select id="findOne" resultType="jp.co.flm.entity.Employee">
+		SELECT
+			employeeid, employeename, section, phone
+		FROM
+			employee
+		WHERE
+			employeeid = #{id};
+	</select>
+
+	<!-- 登録 -->
+	<insert id="save">
+		INSERT INTO
+			EMPLOYEE(employeeId, employeeName, section, phone)
+		VALUES (
+			#{employeeId},
+			#{employeeName},
+			#{section},
+			#{phone});
+	</insert>
+
+	<!-- 全件検索 -->
+	<select id="findAll" resultType="jp.co.flm.entity.Employee">
+		SELECT
+			employeeid, employeename, section, phone
+		FROM
+			employee;
+	</select>
+
+	<!-- 更新 -->
+	<update id="update">
+		UPDATE employee
+		SET	employeeName=#{employeeName},
+				section=#{section},
+				phone=#{phone}
+		WHERE employeeId=#{employeeId};
+	</update>
+
+</mapper>

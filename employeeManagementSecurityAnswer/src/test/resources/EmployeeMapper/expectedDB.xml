@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<employee employeeId="922100" employeeName="富士通　太郎" section="研修部" phone="7700-8888" />
+
+	<employee employeeId="922101" employeeName="鈴木　一郎" section="研修部" phone="7700-2257" />
+	<employee employeeId="922102" employeeName="田村　正人" section="研修部" phone="7700-2258" />
+	<employee employeeId="922103" employeeName="松田　明美" section="開発部" phone="7712-4418" />
+	<employee employeeId="922104" employeeName="浅井　順二" section="開発部" phone="7712-4416" />
+	<employee employeeId="922105" employeeName="高橋　道夫" section="営業部" phone="7712-3316" />
+	<employee employeeId="922106" employeeName="夏木　裕子" section="営業部" phone="7712-3317" />
+</dataset>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
+<title>従業員検索画面</title>
+</head>
+<body>
+	<div id="mainArea">
+		<h1>従業員検索</h1>
+		<h2>従業員検索画面</h2>
+		<p>従業員IDを入力してください</p>
+			<p th:text="${message}" style="text-align: center; color: red">
+			error message
+		</p>
+		<form method="get" action="#" th:action="@{/retrieveEmployee}"
+														th:object="${employeeIdForm}">
+			<input type="text"  maxlength="6" th:field="*{employeeId}" >
+			<div id="error" th:if="${#fields.hasErrors('employeeId')}"
+							th:errors="*{employeeId}" style="text-align: center">
+				validation massage
+			</div>
+			<br>
+			<br>
+			<button type="submit">検索</button>
+		</form>
+	</div>
+	<div id="footerArea" >
+		<a th:href="@{/}">[トップに戻る]</a>
+	</div>
+</body>
+</html>

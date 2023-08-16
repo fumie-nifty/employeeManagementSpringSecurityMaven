@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
+<title>従業員登録画面</title>
+</head>
+<body>
+	<div id="mainArea">
+		<h1>従業員登録</h1>
+		<h2>従業員登録画面</h2>
+		<p>以下の項目を入力して、[確認]ボタンを押してください</p>
+		<p th:text="${message}" style="text-align: center; color: red">
+			error message
+		</p>
+		<form th:object="${employeeForm}" method="post"
+			action="#" th:action="@{/confirmInsert}">
+			<table border="1">
+				<tr>
+					<th>従業員ID</th>
+					<td>
+						<input type="text" th:field="*{employeeId}" maxlength="6"
+							placeholder="922100">
+						<div id="error" th:if="${#fields.hasErrors('employeeId')}"
+							th:errors="*{employeeId}">validation massage</div>
+					</td>
+				</tr>
+				<tr>
+					<th>従業員名</th>
+					<td>
+						<input type="text" th:field="*{employeeName}" maxlength="20"
+							placeholder="富士通　太郎">
+						<div id="error" th:if="${#fields.hasErrors('employeeName')}"
+							th:errors="*{employeeName}">validation massage</div>
+					</td>
+				</tr>
+				<tr>
+					<th>部署名</th>
+					<td>
+						<input type="text" th:field="*{section}" maxlength="5"
+							placeholder="開発部">
+						<div id="error" th:if="${#fields.hasErrors('section')}"
+							th:errors="*{section}">validation massage</div>
+					</td>
+				</tr>
+				<tr>
+					<th>内線番号</th>
+					<td>
+						<input type="text" th:field="*{phone}" maxlength="9"
+							placeholder="7700-8888">
+						<div id="error" th:if="${#fields.hasErrors('phone')}"
+							th:errors="*{phone}">validation massage</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<br>
+			<button type="submit">確認</button>
+		</form>
+	</div>
+	<div id="footerArea" >
+		<a th:href="@{/}">[トップに戻る]</a>
+	</div>
+</body>
+</html>

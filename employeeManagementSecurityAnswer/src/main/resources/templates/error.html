@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
+<title>エラー画面</title>
+</head>
+<body>
+	<div id="mainArea">
+		<h1>システムエラー</h1>
+		<hr>
+		<!--  エラーメッセージ -->
+		<p th:text="${message}">error message</p>
+	</div>
+	<div id="footerArea" >
+		<a th:href="@{/}">[トップに戻る]</a>
+	</div></body>
+</html>
